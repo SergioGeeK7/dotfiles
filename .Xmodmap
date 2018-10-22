@@ -1,0 +1,8 @@
+keycode 130 = BackSpace
+keycode 132 = BackSpace
+keycode 131 = Return
+keycode 134 = Mode_switch
+keysym j = j J Left
+keysym l = l L Right
+keysym i = i I Up
+keysym k = k K Down
