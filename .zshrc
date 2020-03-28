@@ -99,9 +99,11 @@ mac-spoofing() {
  ifconfig en0 |grep ether;
 }
 
-notify-me() {
+notify() {
  ADD=$(( 60 * $1 ));
- sleep $ADD && say finished, done, now, just do it;
+ sleep $ADD;
+ say finished                        
+ osascript -e 'display notification "Done!" with title "Finished" sound name "Submarine"'
 }
 
 
