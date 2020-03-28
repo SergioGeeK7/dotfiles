@@ -86,3 +86,22 @@ source $ZSH/oh-my-zsh.sh
 J='• SergioGeeK7 •'
 PROMPT='%{$fg[red]%}• SergioGeeK7 • %{$fg_bold[magenta]%}[%c] %{$reset_color%}'
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
+
+
+# Utils
+
+free-port() { kill "$(lsof -t -i :$1)"; }
+kill-port() { kill -kill "$(lsof -t -i :$1)"; }
+
+mac-spoofing() {
+ ifconfig en0 |grep ether;
+ sudo ifconfig en0 ether $(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//');
+ ifconfig en0 |grep ether;
+}
+
+notify-me() {
+ ADD=$(( 60 * $1 ));
+ sleep $ADD && say finished, done, now, just do it;
+}
+
+
